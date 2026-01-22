@@ -5,7 +5,7 @@ export default defineConfig({
   description: "基于函数式编程的轻量级 GIS 开发框架",
   
   // 部署到 github pages 时需要的 base 路径，如果是根域名则写 '/'
-  base: '/',
+  base: '/jgis-docs/',
 
   appearance: 'dark', 
 
