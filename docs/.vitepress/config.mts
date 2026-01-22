@@ -9,6 +9,8 @@ export default defineConfig({
 
   appearance: 'dark', 
 
+   outDir: '../dist', // 打包输出目录
+
   themeConfig: {
     // 顶部左侧 Logo
     logo: '/logo.svg',
