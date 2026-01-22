@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="j-node-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <path d="M120 40 V120 A40 40 0 0 1 40 120" 
+        stroke="url(#j-node-grad)" 
+        stroke-width="35" 
+        fill="none" 
+        stroke-linecap="round" />
+        
+  <circle cx="120" cy="40" r="17.5" fill="url(#j-node-grad)" />
+</svg>

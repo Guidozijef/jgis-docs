@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./chunks/framework.DPLcbSfg.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"api/3d.md","filePath":"api/3d.md"}'),r={name:"api/3d.md"};function o(s,c,n,d,p,i){return t(),a("div")}const f=e(r,[["render",o]]);export{m as __pageData,f as default};
