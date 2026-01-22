@@ -1,0 +1,16 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="link-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" /> <!-- Cyan -->
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" /> <!-- Blue -->
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" /> <!-- Purple -->
+    </linearGradient>
+  </defs>
+
+  <!-- 左上角的点：代表 Origin / 起点 -->
+  <circle cx="60" cy="60" r="25" fill="url(#link-grad)" />
+
+  <!-- 右侧的 J 形钩：代表 Path / 路径 -->
+  <!-- 这是一个加粗的路径，从中间弯曲下来 -->
+  <path d="M140 60 V100 A40 40 0 0 1 60 140" stroke="url(#link-grad)" stroke-width="50" fill="none" stroke-linecap="round" />
+</svg>
