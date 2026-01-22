@@ -1,0 +1,41 @@
+:root {
+  /* 主色调 - 类似 Pinia 但偏科技蓝紫色 */
+  --vp-c-brand-1: #3b82f6;
+  --vp-c-brand-2: #6366f1;
+  --vp-c-brand-3: #8b5cf6;
+
+  /* 首页 Hero 标题渐变 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #3b82f6 30%, #8b5cf6);
+
+  /* 背景纹理 (可选，增加高级感) */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f8fafc;
+}
+
+:root {
+  /* 在暗黑模式下，让背景变为纯黑或极深蓝黑 */
+  --vp-c-bg: #050508; 
+  --vp-c-bg-alt: #0f1014; /* 侧边栏颜色 */
+  
+  /* 调整边框颜色，让它更隐形 */
+  --vp-c-divider: rgba(255, 255, 255, 0.08);
+  --vp-c-border: rgba(255, 255, 255, 0.08);
+}
+
+.dark {
+  --vp-c-bg: #0f172a;
+  --vp-c-bg-alt: #1e293b;
+}
+
+/* 优化表格样式，让 API 文档更好看 */
+table {
+  width: 100%;
+  display: table;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--vp-c-bg-alt);
+  white-space: nowrap;
+}
