@@ -45,14 +45,14 @@ export default defineConfig({
         {
           text: '二维 (2D)',
           items: [
-            { text: '地图核心', link: '/api/2d' },
-            { text: '交互 Hooks', link: '/api/2d-hooks' }
+            { text: '地图核心', link: '/api/2d/2d' },
+            { text: '交互 Hooks', link: '/api/2d/2d-hooks' }
           ]
         },
         {
           text: '三维 (3D)',
           items: [
-            { text: '场景核心', link: '/api/3d' }
+            { text: '场景核心', link: '/api/3d/3d' }
           ]
         }
       ]
