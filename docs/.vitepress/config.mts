@@ -19,7 +19,7 @@ export default defineConfig({
     // 顶部导航栏
     nav: [
       { text: '指南', link: '/guide/getting-started' },
-      { text: 'API 参考', link: '/api/2d' },
+      { text: 'API 参考', link: '/api/2d/index' },
       { text: '更新日志', link: 'https://github.com/Guidozijef/jgis/releases' }
     ],
 
@@ -45,14 +45,14 @@ export default defineConfig({
         {
           text: '二维 (2D)',
           items: [
-            { text: '地图核心', link: '/api/2d/2d' },
+            { text: '地图核心', link: '/api/2d/index' },
             { text: '交互 Hooks', link: '/api/2d/2d-hooks' }
           ]
         },
         {
           text: '三维 (3D)',
           items: [
-            { text: '场景核心', link: '/api/3d/3d' }
+            { text: '场景核心', link: '/api/3d/index' }
           ]
         }
       ]

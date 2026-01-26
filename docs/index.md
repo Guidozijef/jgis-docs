@@ -11,7 +11,7 @@ hero:
       link: /guide/getting-started
     - theme: alt
       text: API 文档
-      link: /api/2d
+      link: /api/2d/index
   image:
     component: MapDemo
 
