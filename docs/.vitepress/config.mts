@@ -1,20 +1,19 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "JGIS",
-  description: "基于函数式编程的轻量级 GIS 开发框架",
-  
+  title: 'JGIS',
+  description: '基于函数式编程的轻量级 GIS 开发框架',
+
   // 部署到 github pages 时需要的 base 路径，如果是根域名则写 '/'
   base: '/jgis-docs/',
 
-  appearance: 'dark', 
+  appearance: 'dark',
 
-   outDir: '../dist', // 打包输出目录
+  outDir: '../dist', // 打包输出目录
 
   themeConfig: {
     // 顶部左侧 Logo
     logo: '/logo.svg',
-
 
     // 顶部导航栏
     nav: [
@@ -46,29 +45,26 @@ export default defineConfig({
           text: '二维 (2D)',
           items: [
             { text: '地图核心', link: '/api/2d/index' },
-            { text: '交互 Hooks', link: '/api/2d/2d-hooks' }
+            { text: '交互 Hooks', link: '/api/2d/interaction' },
+            { text: 'API', link: '/api/2d/api' }
           ]
         },
         {
           text: '三维 (3D)',
-          items: [
-            { text: '场景核心', link: '/api/3d/index' }
-          ]
+          items: [{ text: '场景核心', link: '/api/3d/index' }]
         }
       ]
     },
 
     // 社交链接
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/Guidozijef/jgis' }
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/Guidozijef/jgis' }],
 
     // 页脚
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2024-present JGIS Team'
     },
-    
+
     // 搜索功能
     search: {
       provider: 'local'
