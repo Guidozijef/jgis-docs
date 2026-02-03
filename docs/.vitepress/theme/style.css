@@ -13,10 +13,14 @@
   --vp-c-bg-alt: #f8fafc;
 }
 
-
 .dark {
   --vp-c-bg: #0f172a;
   --vp-c-bg-alt: #1e293b;
+}
+
+.vp-doc:not(.dark) {
+  /* background:radial-gradient(circle,rgba(14,165,233,.3) 0%,transparent 60%); */
+  background: none;
 }
 
 /* 优化表格样式，让 API 文档更好看 */
