@@ -74,6 +74,16 @@ select.onSelect((e) => {
     <h3>TypeScript</h3>
     <p>100% 类型覆盖。智能提示，拒绝 AnyScript。</p>
   </div>
+  <div class="card">
+    <div class="icon">🎨</div>
+    <h3>二三维一致</h3>
+    <p>OpenLayers 与 Cesium API 风格统一，降低学习成本，快速切换二维与三维场景。</p>
+  </div>
+  <div class="card">
+    <div class="icon">📦</div>
+    <h3>全能拾取</h3>
+    <p>一套 Select / Hover API 同时支持 Vector 与 WMS 服务，统一回调与高亮样式。</p>
+  </div>
   <div class="card card-wide">
     <div class="icon">🔌</div>
     <h3>Vite 专属优化</h3>
