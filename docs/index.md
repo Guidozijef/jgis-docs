@@ -41,10 +41,19 @@ map.on('click', (e) => {
 });
 
 // 🐇 The JGIS Way
-const select = useSelect({
+const select = createSelect({
   layers: [vector, wms],
-  style: { stroke: { color: 'red' } }
-});
+  style: new Style({
+    image: new CircleStyle({
+      radius: 10,
+      fill: new Fill({ color: 'red' })
+    })
+  })
+})
+
+select.onSelect((e) => {
+  console.log('点击事件', e)
+})
 ```
 
 

@@ -29,7 +29,7 @@ export default defineConfig({
           text: '开始',
           items: [
             { text: '简介', link: '/guide/introduction' },
-            { text: '快速上手', link: '/guide/getting-started' }
+            { text: '快速开始', link: '/guide/getting-started' }
           ]
         },
         {
@@ -51,7 +51,11 @@ export default defineConfig({
         },
         {
           text: '三维 (3D)',
-          items: [{ text: '场景核心', link: '/api/3d/index' }]
+          items: [
+            { text: '地图核心', link: '/api/3d/index' },
+            { text: '交互 Hooks', link: '/api/3d/interaction' },
+            { text: 'API', link: '/api/3d/api' }
+          ]
         }
       ]
     },
