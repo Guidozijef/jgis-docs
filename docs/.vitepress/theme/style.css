@@ -14,8 +14,8 @@
 }
 
 .dark {
-  --vp-c-bg: #0f172a;
-  --vp-c-bg-alt: #1e293b;
+  --vp-c-bg: #111827;
+  --vp-c-bg-alt: #0d121b;
 }
 
 .vp-doc:not(.dark) {
