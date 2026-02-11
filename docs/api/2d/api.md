@@ -269,5 +269,12 @@ map.createWmsLayer('wmsLayer', {
 
 | Name        | Type        | Description   |
 | ----------- | ----------- |----------- |
-| overlayer   | Overlayer      | Overlayer实例       |
-| content   | HTML      | 覆盖物绑定上下文      |
+| overlay   | Overlayer      | Overlayer实例       |
+| element   | HTMLElement      | 覆盖物绑定上下文      |
+
+**示例：**
+```typescript
+   const { overlay, element } = createOverlay('layerName', { positioning: 'center' })
+   element.innerHTML = '<div style="color: red;">2323</div>'
+   overlay.setPosition([104.064839, 30.548857])
+```
