@@ -236,7 +236,7 @@ createLayer('laierName', [{lon:120.0, lat:30.0}], {
 
 ```js
 const { createWmsLayer } = useMap('id');
-map.createWmsLayer('wmsLayer', {
+createWmsLayer('wmsLayer', {
     url: 'http://localhost:8080/geoserver/wms',
     layers: 'test:province',
     zIndex: 10,
@@ -274,6 +274,7 @@ map.createWmsLayer('wmsLayer', {
 
 **示例：**
 ```typescript
+   const { createOverlay } = useMap('id');
    const { overlay, element } = createOverlay('layerName', { positioning: 'center' })
    element.innerHTML = '<div style="color: red;">2323</div>'
    overlay.setPosition([104.064839, 30.548857])
