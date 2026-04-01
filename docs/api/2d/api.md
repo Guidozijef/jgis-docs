@@ -348,12 +348,18 @@ trackAnimation([[120, 30], [121, 31], [122, 32], [123, 29]], {
 
 用于地图相机的视野漫游控制，提供了直接面向坐标点、直接面向单个数据点 `Feature` 或直接覆盖一个完整的空间矩形边界框三种聚焦方式。
 
-**参数：**
+**参数 (`flyTo` 和 `flyToByFeature`)：**
 
 | Name        | Type        | Description   |
 | ----------- | ----------- |----------- |
-| coordinate/feature/extent   | Array \| Feature | 你想要移动向的目标实体数据（坐标：`[lon, lat]`） |
+| coordinate/feature   | Array \| Feature | 你想要移动向的目标实体数据（坐标：`[lon, lat]` 或是原生的要素） |
 | options       | flyOptions | 控制漫游缓冲或视角的过渡配置对象  |
+
+**参数 (`flyToByExtent`)：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| options       | flyOptions | 根据 `index.ts` 本方法只有一个入参，其中包含了包围边界配置 `options.extend`  |
 
 **flyOptions配置项：**
 
@@ -409,18 +415,99 @@ setZoom(current + 1); // 放大一级
 
 **参数：**
 
-| Name        | Type        | Description   |
-| ----------- | ----------- |----------- |
-| map   | ol.Map      | OpenLayers 地图实例 (即 `getInstance()` 返回的结果)  |
-| id     | String | 创建时绑定的目标 id 字符标识 |
+无，它会自动抓取创建时内部绑定的实例和 ID 进行清理。
 
 **示例：**
 ```typescript
 import { onBeforeUnmount } from 'vue';
 
-const { getInstance, getTargetId, destroyMap } = useMap('div_id');
+const { destroyMap } = useMap('div_id');
 
 onBeforeUnmount(() => {
-    destroyMap(getInstance(), getTargetId());
+    destroyMap();
 })
 ```
+
+## createBlankLayer
+
+创建一个没有任何默认数据点的空白矢量图层。
+
+**参数：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| layerName   | String      | 图层名称标识       |
+| options     | styleOptions | 包含图层层级（`zIndex`）、是否可见（`visible`）及基础样式配置（`style` / `getStyle`）的对象 |
+
+**返回值：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| layer   | ol.layer.Layer      | 返回继承自 OpenLayers Layer 的图层基类对象 |
+
+## getLonLat
+
+统一的经纬度数据提取工具方法，通过传入任意包含有约定经纬度字段的原始业务数据对象，自动抽取出 `[longitude, latitude]`。
+
+**参数：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| data   | Any      | 含有特定地理标签映射的数据项  |
+
+**返回值：**
+
+返回 `[number, number]` 元组数组。
+
+## findFeature
+
+遍历特定图层，并在其存储特性的 properties 属性中依据条件字典返回检索到的第一个关联结果。
+
+**参数：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| layerName   | String | 要查找的名称 |
+| properties  | Any | 匹配的对象字典或条件 |
+
+**返回值：**
+返回第一个符合计算后的 `ol.FeatureLike`。
+
+## getFeatures 
+
+简单快捷地获取任意一个给定名称图层内的所有的 Feature。
+
+**参数：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| layerName   | String | 要获取数据的图层名称标识 |
+
+**返回值：**
+返回 `FeatureLike[]` 的 OpenLayers 要素数组。
+
+## getAllLayer / getAllOverlay
+
+获取当前整个底图实例中挂载的**所有**通用图层和所有独立挂靠的覆盖物。
+
+**参数：**
+
+无参数。底层的 `useMap` 会自动绑定当前闭包中的 `map`。
+
+**返回值：**
+分别返回包含了 `(ol.layer.Base | ol.Overlay)[]` 和单独的 `ol.Overlay[]` 数组。
+
+**示例：**
+```typescript
+const { getAllLayer } = useMap('id');
+
+const layers = getAllLayer();
+console.log('当前地图所有挂载层：', layers);
+```
+
+## getProjection
+
+获取当前 2D 平面上相机的地图投影标准对象。
+
+**返回值：**
+返回当前相机所处的原生 `ol.proj.Projection` 实例（例如其内部记录了是 EPSG:4326 或 3857 以及当前经纬范围等标准系常量）。

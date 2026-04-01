@@ -317,7 +317,48 @@ setTimeout(() => {
 
 // 结束所有气象
 import { onUnmounted } from 'vue'
+
 onUnmounted(() => {
   weatherControllor.destroy()
+})
+```
+
+## createBlankLayer
+
+预先向 3D 场景申请并创建一个干净的 Primitive 占位集合对象，供后续手工独立挂靠或在某些特定场景下作为承载容器。
+
+**参数：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| layerName   | String      | 注册的占位名称标识       |
+
+**返回值：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| layer   | Cesium.Primitive      | 返回初始化的原生物体集合基类对象 |
+
+
+## destroyMap
+
+完全摧毁并取消关联当前 `Viewer` 的 WebGL 渲染循环机制，用于离开组件时释放显存避免内存泄露。
+
+**参数：**
+
+| Name        | Type        | Description   |
+| ----------- | ----------- |----------- |
+| id     | String | 创建时绑定的目标 DOM 节点的 id 字符标识 |
+
+**示例：**
+
+```typescript
+import { onBeforeUnmount } from 'vue'
+
+const { destroyMap } = useMap('cesiumContainer')
+
+onBeforeUnmount(() => {
+  // 根据 types.ts，3D 版本的销毁操作只要传入当时挂载的 target ID 即可解绑
+  destroyMap('cesiumContainer')
 })
 ```
