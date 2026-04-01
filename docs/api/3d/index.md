@@ -17,7 +17,7 @@
 | ----------- | ----------- |----------- |
 | terrainUrl   | String      | 地形服务地址       |
 | minZoom     | Number | 最小缩放 |
-| maxZoom     | MapOptions | 配置项 |
+| maxZoom     | Number | 最大缩放 |
 | showFrameRate     | Boolean | 是否显示帧率 |
 | baseLayers     | BaseLayerOptions | 天地图底图配置 |
 
@@ -41,5 +41,5 @@ const options = {
       mapType: 'ver'
     }
 }
-const { addMark, removeLayer } =  useMap('id', options);
+const { addMarker, removeLayer } =  useMap('id', options);
 ```

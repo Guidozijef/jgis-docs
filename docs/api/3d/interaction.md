@@ -2,14 +2,14 @@
 
 `jgis/3d` 模块提供了基于 `Cesium` 的轻量级封装。统一封装全局拾取api
 
-## ceateSelect
+## createSelect
 
 创建一个三维选择器。
 
 
 ```typescript
 import { useMap } from 'jgis/3d'
-const { ceateSelect } =  useMap('id')
+const { createSelect } =  useMap('id')
 
 
 const { onSelect, clear } = await createSelect({
